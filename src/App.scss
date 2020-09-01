@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 .App {
   height: 100vh;
@@ -8,10 +8,32 @@
   // background: blue;
 }
 
+.row {
+  margin: 0;
+}
+
 .accountsContainer {
   width: 40%;
-  background: green;
   margin: 50px auto;
-  border-radius: 10px;
-  box-shadow: 0 0 5px #999;
+  
+  .accountInfoContainer {
+    background: green;
+    box-shadow: 0 0 8px #777;
+    border-radius: 10px;
+    margin: 10px;
+    
+  }
+}
+
+.accountInfo {
+  text-align: left;
+  // padding-left: 10%;
+}
+
+.accountBalance {
+  padding-left: 14px;
+}
+
+.rewardsInfo {
+  align-self: center;
 }
