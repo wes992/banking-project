@@ -1,0 +1,17 @@
+@import 'variables';
+
+.App {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  // background: blue;
+}
+
+.accountsContainer {
+  width: 40%;
+  background: green;
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #999;
+}
