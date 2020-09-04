@@ -2,38 +2,307 @@
 
 .App {
   height: 100vh;
-  width: 100%;
+  // width: 100%;
   position: absolute;
   text-align: center;
   // background: blue;
 }
 
-.row {
-  margin: 0;
-}
-
 .accountsContainer {
-  width: 40%;
-  margin: 50px auto;
-  
-  .accountInfoContainer {
-    background: rgba(0,0,0,0.2);
-    box-shadow: 0 0 8px #777;
+  text-align: center;
+  margin: auto;
+}
+
+
+.card-block {
+  height: 150px;
+  width: 60%;
+  background: #6236FF;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.09);
+  color: #FFF;
+  position: relative;
+  margin: auto;
+
+  .card-main {
+    background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.23) 100%);
+    position: absolute;
     border-radius: 10px;
-    margin: 10px;
-    
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px 24px;
   }
+    .balance {//doublecheck this one
+      position: absolute;
+      left: 24px;
+      top: 24px;
+
+      .title {//doublecheck this one
+        font-weight: 700;
+        color: #FFF;
+        margin-top: 7px;
+        font-size: 24px;
+      }
+    }
+  
+    span.label { //doublecheck this one
+      font-size: 11px;
+      letter-spacing: 1px;
+      opacity: .5;
+      line-height: 1em;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      display: block;
+      font-weight: 500;
+    }
+
+    .in .card-number {
+      text-align: left;
+      position: absolute;
+      left: 70%;
+      top:10%;
+      font-size: 17px;
+      letter-spacing: 3px;
+      font-weight: 500;
+    }
+
+    .in .card-expiry {
+      text-align: left;
+      position: absolute;
+      left: 70%;
+      bottom: 10%;
+      font-size: 14px;
+      font-weight: 500;
+      margin-right: 20px;
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    }
+}  
+// .row {
+//   margin: 0;
+// }
+
+// .accountsContainer {
+//   text-align: center;
+//   width: 40%;
+//   margin: 50px auto;
+  
+//   .accountInfoContainer {
+//     background: rgba(0,0,0,0.2);
+//     box-shadow: 0 0 8px #777;
+//     border-radius: 10px;
+//     margin: 10px;
+
+//     .accountInfoBtn {
+//       min-width: 100%;
+//       background: transparent;
+//       border: none;
+//       outline: none
+//     }
+    
+//   }
+// }
+
+// .accountInfo {
+//   text-align: left;
+
+// }
+
+// .accountBalance {
+//   text-align: left;
+//   padding-left: 14px;
+// }
+// .accountName {
+//   text-align: left;
+//   padding-left: 14px;
+// }
+
+// .rewardsInfo {
+//   align-self: center;
+// }
+
+// .rewardsBtn{
+//   min-width: 100%;
+//   text-align: center;
+//   font-size: .75rem;
+//   background-color: transparent;
+//   padding: 5px;
+//   border: none;
+//   color: $rewards-text;
+
+//   &:hover {
+//     text-decoration: none;
+//     color: whitesmoke;
+//   }
+// }
+
+
+// .nav {
+//   position: absolute;
+//   bottom: 0;
+// }
+
+
+.appBottomMenu {
+  min-height: 56px;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #DCDCE9;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
-.accountInfo {
-  text-align: left;
-  // padding-left: 10%;
+.appBottomMenu.no-border {
+  border: 0 !important;
+  box-shadow: 0 !important;
 }
 
-.accountBalance {
-  padding-left: 14px;
+.appBottomMenu .item {
+  font-size: 9px;
+  letter-spacing: 0;
+  text-align: center;
+  width: 100%;
+  height: 56px;
+  line-height: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.rewardsInfo {
-  align-self: center;
+.appBottomMenu .item:before {
+  content: '';
+  display: block;
+  height: 2px;
+  border-radius: 0 0 10px 10px;
+  background: transparent;
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  top: 0;
+}
+
+.appBottomMenu .item .col {
+  width: 100%;
+  padding: 0 4px;
+  text-align: center;
+}
+
+.appBottomMenu .item .icon,
+.appBottomMenu .item ion-icon {
+  display: inline-flex;
+  margin: 1px auto 3px auto;
+  font-size: 24px;
+  line-height: 1em;
+  color: #27173E;
+  transition: 0.1s all;
+  display: block;
+  margin-top: 1px;
+  margin-bottom: 3px;
+}
+
+.appBottomMenu .item .action-button {
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+  margin-left: -5px;
+  margin-right: -5px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 200px;
+  background: #6236FF;
+}
+
+.appBottomMenu .item .action-button.large {
+  width: 60px;
+  height: 60px;
+  margin-top: -20px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.appBottomMenu .item .action-button .icon,
+.appBottomMenu .item .action-button ion-icon {
+  color: #FFF !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+}
+
+.appBottomMenu .item strong {
+  margin-top: 4px;
+  display: block;
+  color: #27173E;
+  font-weight: 400;
+  transition: 0.1s all;
+}
+
+.appBottomMenu .item:active {
+  opacity: .8;
+}
+
+.appBottomMenu .item.active:before {
+  background: #6236FF;
+}
+
+.appBottomMenu .item.active .icon,
+.appBottomMenu .item.active ion-icon,
+.appBottomMenu .item.active strong {
+  color: #6236FF !important;
+  font-weight: 500;
+}
+
+.appBottomMenu .item:hover .icon,
+.appBottomMenu .item:hover ion-icon,
+.appBottomMenu .item:hover strong {
+  color: #27173E;
+}
+
+.appBottomMenu.text-light {
+  color: #FFF;
+}
+
+.appBottomMenu.text-light .item {
+  color: #FFF;
+  opacity: .7;
+}
+
+.appBottomMenu.text-light .item .icon,
+.appBottomMenu.text-light .item ion-icon,
+.appBottomMenu.text-light .item strong {
+  color: #FFF;
+}
+
+.appBottomMenu.text-light .item.active {
+  opacity: 1;
+}
+
+.appBottomMenu.text-light .item.active .icon,
+.appBottomMenu.text-light .item.active ion-icon,
+.appBottomMenu.text-light .item.active strong {
+  color: #FFF !important;
+}
+
+.appBottomMenu.bg-primary, .appBottomMenu.bg-secondary, .appBottomMenu.bg-success, .appBottomMenu.bg-warning, .appBottomMenu.bg-danger, .appBottomMenu.bg-info, .appBottomMenu.bg-light, .appBottomMenu.bg-dark {
+  border: 0;
+}
+
+.appBottomMenu.bg-primary .item:before, .appBottomMenu.bg-secondary .item:before, .appBottomMenu.bg-success .item:before, .appBottomMenu.bg-warning .item:before, .appBottomMenu.bg-danger .item:before, .appBottomMenu.bg-info .item:before, .appBottomMenu.bg-light .item:before, .appBottomMenu.bg-dark .item:before {
+  display: none;
 }

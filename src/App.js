@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
-import Accounts from './components/Accounts';
-import axios from 'axios';
+import Nav from './components/Nav'
+// import axios from 'axios';
+import config from './accountData/config';
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from './Routes';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.scss';
@@ -11,36 +14,25 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get("http://technivationtestapi.azurewebsites.net/api/accounts")
-      .then(response => {
-      const newAccounts =response.data.map(account => {
-        return {
-          number : account.number,
-          maskedNumber : account.maskedNumber,
-          nickname : account.nickname,
-          isEnrolledInRewards : account.isEnrolledInRewards,
-          rewardsPoints :  account.rewardsPoints,
-          accountType : account.accountType,
-          isEligibleForRewards : account.isEligibleForRewards,
-          currentBalance : account.currentBalance,
-          formattedCurrentBalance : account.formattedCurrentBalance
-        }
-      });
-      
-      const newState = Object.assign({}, this.state, {
-        accounts: newAccounts
-      });
-
-      this.setState(newState)
-    }).catch(error => console.log(error))
+    fetch(config.url + '/api/accounts').then(res=>res.json()).then(
+      result=> {
+        this.setState({accounts:result})
+      }
+    )
   }
 
-render() {
-  return (
-    <Accounts accounts={this.state.accounts} />
-  );
-}
+
+  render() {
+    const { accounts } = this.state
+    return (
+      <div className="app">
+        <Router>
+          <Nav />
+          <Routes accounts={accounts}/>
+        </Router>
+      </div>
+    );
+  }
 }
 
 

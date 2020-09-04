@@ -7,6 +7,7 @@ const Accounts = ({accounts}) => {
 
     return ( 
         <div className="accountsContainer">
+            <h3>Current Accounts</h3>
             <Account accounts={accounts}/>
         </div>
      );
