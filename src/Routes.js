@@ -3,6 +3,9 @@ import { Switch, Route } from "react-router-dom";
 
 import Accounts from './components/Accounts';
 import Rewards from './components/Rewards';
+import Settings from './components/Settings';
+import Spending from './components/Spending';
+import Bills from './components/Bills';
 
 
 const Routes = ({accounts}) => {
@@ -13,8 +16,17 @@ const Routes = ({accounts}) => {
         <Accounts accounts={accounts}/>
       </Route>
       <Route path="/rewards">
-        <Rewards />
+        <Rewards accounts={accounts}/>
+      </Route>      
+      <Route path="/bills">
+        <Bills accounts={accounts}/>
       </Route>
+      <Route path="/settings">
+        <Settings accounts={accounts}/>
+      </Route>
+      <Route path="/spending">
+        <Spending accounts={accounts}/>
+      </Route>            
     </Switch>
   );
 };
