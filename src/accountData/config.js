@@ -1,5 +1,5 @@
 const config = {
-  url: 'http://technivationtestapi.azurewebsites.net'
+  url: 'https://technivationtestapi.azurewebsites.net'
 }
 
 export default config;
