@@ -8,7 +8,7 @@ const Spending = () => {
         <div className="appHeader">
           <div className="left">
             <a href="/accounts" className="headerButton goBack">
-            <h5>MyBank &trade;</h5>
+            <h5><strong>MyBank &trade;</strong></h5>
             </a>
           </div>
           <div className="pageTitle">Spending</div>

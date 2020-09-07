@@ -7,6 +7,8 @@ import Settings from './components/Settings';
 import Spending from './components/Spending';
 import Bills from './components/Bills';
 import Login from './components/Login';
+import Nav from './components/Nav'
+
 
 
 const Routes = ({accounts}, handler) => {
@@ -17,18 +19,23 @@ const Routes = ({accounts}, handler) => {
         <Login />
       </Route>
       <Route path="/accounts">
+        <Nav />
         <Accounts accounts={accounts}/>
       </Route>
       <Route path="/rewards">
+        <Nav />
         <Rewards accounts={accounts}/>
       </Route>      
       <Route path="/bills">
         <Bills accounts={accounts}/>
+        <Nav />
       </Route>
       <Route path="/settings">
+        <Nav />
         <Settings accounts={accounts}/>
       </Route>
       <Route path="/spending">
+        <Nav />
         <Spending accounts={accounts}/>
       </Route>            
     </Switch>

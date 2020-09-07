@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Nav from './components/Nav'
 // import axios from 'axios';
 import config from './accountData/config';
 import { BrowserRouter as Router } from "react-router-dom";
@@ -30,7 +29,6 @@ class App extends Component {
     return (
       <div className="app">
         <Router>
-          <Nav />
           <Routes accounts={accounts}/>
         </Router>
       </div>

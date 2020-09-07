@@ -8,12 +8,15 @@
 
 .accountsContainer {
   text-align: center;
-  margin: 12% auto;
+  margin: 20% auto;
   color: $main-text;
-  height: 100vh;
+  height: 76vh
 }
 
-
+.goBack:hover {
+  text-decoration: none;
+  transform:scale(1.05)
+}
 .card {
   background: $main-background-fallback;
   border-radius: 10px;
@@ -371,16 +374,6 @@
   }
 }
 
-.loginParagraph {
-  width: 50%;
-  position: absolute;
-  left: 50%;
-  text-align: center;
-  transform: translate(-50%, 50%);
-  color: $transparent-white;
-  margin: 0 auto;
-}
-
 .formTitle {
   color: $transparent-white;
 }
@@ -474,11 +467,11 @@
 }
 
 .btn-primary {
-  background: $card-bg;
+  background: $card-bg !important;
   border: none;
 
   &#loginBtn {
-    margin-bottom: 10%;
+    margin-bottom: 45%;
 
   &:hover{
     background: $card-bg;
@@ -493,6 +486,12 @@
 .loginParagraph {
   color: $transparent-white;
   margin: 0 auto;
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  text-align: center;
+  transform: translate(-50%, 50%);
 }
 
 .extra-header-active {
@@ -966,7 +965,7 @@ span h5:hover {
   border-top: 1px solid $transparent-white;
   padding-left: 4px;
   padding-right: 4px;
-  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: 0;
 }
 
 .appBottomMenu.no-border {

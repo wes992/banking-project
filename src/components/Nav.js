@@ -18,16 +18,10 @@ const Nav = () => {
   };
 
   checkRoute()
-  const appBottomStyle = {
-    position: "fixed",
-    bottom: 0,
-    zIndex: 1,
-    paddingBottom: 0,
-  };
 
   return (
     <nav className="nav" onClick={checkRoute}>
-      <div className="appBottomMenu no-border" style={appBottomStyle}>
+      <div className="appBottomMenu no-border">
         <Link to="/spending" className="item">
           <div className="col">
             <ion-icon name="pulse-outline"></ion-icon>
