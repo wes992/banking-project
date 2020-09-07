@@ -27,8 +27,8 @@ const Routes = ({accounts}, handler) => {
         <Rewards accounts={accounts}/>
       </Route>      
       <Route path="/bills">
-        <Bills accounts={accounts}/>
         <Nav />
+        <Bills accounts={accounts}/>
       </Route>
       <Route path="/settings">
         <Nav />

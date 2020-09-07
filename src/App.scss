@@ -471,7 +471,7 @@
   border: none;
 
   &#loginBtn {
-    margin-bottom: 45%;
+    // margin-bottom: 45%;
 
   &:hover{
     background: $card-bg;
@@ -489,7 +489,7 @@
   width: 50%;
   position: absolute;
   left: 50%;
-  bottom: 10%;
+  bottom: 15%;
   text-align: center;
   transform: translate(-50%, 50%);
 }
