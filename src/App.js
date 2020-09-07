@@ -20,10 +20,9 @@ class App extends Component {
       }
     )
   }
-  
-
 
   render() {
+
     const { accounts } = this.state
     return (
       <div className="app">
@@ -36,5 +35,9 @@ class App extends Component {
   }
 }
 
+
+// $(function() {
+//   $('a.item[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+// });
 
 export default App;

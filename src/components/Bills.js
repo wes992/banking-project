@@ -3,6 +3,7 @@ import React from 'react';
 const Bills = () => {
 
     return(
+      <div>
         <div className="appHeader">
           <div className="left">
             <a href="/" className="headerButton goBack">
@@ -19,6 +20,16 @@ const Bills = () => {
               <span className="badge">4</span>
             </a>
           </div>
+        </div>
+        <div className='accountsContainer'>
+          <h1>Bills Page</h1>
+          <h1>Bills Page</h1>
+          <h1>Bills Page</h1>
+          <h1>Bills Page</h1>
+          <h1>Bills Page</h1>
+          <h1>Bills Page</h1>
+          <h1>Bills Page</h1>
+        </div>
         </div>
     )
 }

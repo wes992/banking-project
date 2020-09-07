@@ -2,14 +2,11 @@ import React, { Component } from "react";
 import config from "../accountData/config";
 
 class Rewards extends Component {
-  state = {
-    accounts: this.props.accounts,
-  };
 
   handleClick = async (accountId) => {
     if (accountId.isEnrolledInRewards) {
       try {
-        this.props.accounts.find((account) => account.number === accountId);
+        const account = this.props.accounts.find((account) => account.number === accountId);
 
         const redeemAmount = prompt(
           "How many points would you like to redeem?"
@@ -26,16 +23,26 @@ class Rewards extends Component {
             }),
           }
         )
-          .then((res) => res.json())
-          .then((res) => console.log(res));
-        alert(
-          `Successfully redeemed ${redeemAmount} points! Your rewards balance has been updated`
-        );
-        const json = await request.json(); //This is the line that is throwing 'cannot find property json of undefined' error
+          // .then((res) => res.json())
+          // .then((res) => console.log(res));
+          const json = await request.json(); //This is the line that is throwing 'cannot find property json of undefined' error
+          
+          if ((1 > redeemAmount) || (redeemAmount > 10000) || (redeemAmount === null)) {
+            return alert('Please try again, with numbers greater than 0')
+          }
+          if(redeemAmount > 0) {
+            return alert(
+              `Successfully redeemed ${redeemAmount} points! Your updated rewards balance is ${json}`
+              );
+            }
+            if (json.status === 400) {
+              return alert(`You don't have enough points to do that. Your available balance is ${account.rewardsPoints}, try again with a number less that that.`)
+            }
 
-        this.setState((previousState) => ({
-          accounts: previousState.map((account) =>
-            account.number === accountId ? { ...account, ...json } : account
+
+        this.setProps(previousState => ({
+          accounts: previousState.accounts.map(account =>
+            account.number === accountId.number ? { ...account, ...json } : account
           ),
         }));
       } catch (error) {
@@ -95,7 +102,7 @@ class Rewards extends Component {
                       >
                         {account.isEnrolledInRewards
                           ? `${account.rewardsPoints} points`
-                          : "enroll in rewards"}
+                          : "Start Earning"}
                       </h5>
                     </span>
                   </div>

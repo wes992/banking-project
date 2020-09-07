@@ -3,6 +3,8 @@ import React from 'react';
 const Spending = () => {
 
     return(
+        <div>
+
         <div className="appHeader">
           <div className="left">
             <a href="/" className="headerButton goBack">
@@ -20,6 +22,16 @@ const Spending = () => {
             </a>
           </div>
         </div>
+                <div className='accountsContainer'>
+                <h1>Spending Page</h1>
+                <h1>Spending Page</h1>
+                <h1>Spending Page</h1>
+                <h1>Spending Page</h1>
+                <h1>Spending Page</h1>
+                <h1>Spending Page</h1>
+                <h1>Spending Page</h1>
+              </div>
+              </div>
     )
 }
 

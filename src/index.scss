@@ -7,10 +7,11 @@
   font-family: $main-font;
 }
 
-html {
-  height: 100vh;
-}
+// html {
+//   height: 100vh;
+// }
 
 body {
+  // height: 100%;
   background-image: linear-gradient(120deg, #65f6ef 0%, #0061b1 100%);
 }
