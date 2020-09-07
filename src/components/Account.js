@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 class Account extends Component {
 
   state={
-   accounts: this.props.accounts
+   accounts: this.props
   }
   
   

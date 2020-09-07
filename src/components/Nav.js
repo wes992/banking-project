@@ -13,10 +13,11 @@ const Nav = () => {
         } else {
           link.classList.remove("active");
         }
-      }, 250);
+      }, 100);
     });
   };
 
+  checkRoute()
   const appBottomStyle = {
     position: "fixed",
     bottom: 0,
@@ -25,74 +26,39 @@ const Nav = () => {
   };
 
   return (
-    <nav className="nav">
+    <nav className="nav" onClick={checkRoute}>
       <div className="appBottomMenu no-border" style={appBottomStyle}>
-        <Link to="/spending" className="item" onClick={checkRoute}>
+        <Link to="/spending" className="item">
           <div className="col">
             <ion-icon name="pulse-outline"></ion-icon>
             <strong>Spending</strong>
           </div>
         </Link>
-        <Link to="/" className="item active" onClick={checkRoute}>
+        <Link to="/accounts" className="item">
           <div className="col">
             <ion-icon name="card-outline"></ion-icon>
             <strong>Accounts</strong>
           </div>
         </Link>
-        <Link to="/rewards" className="item" onClick={checkRoute}>
+        <Link to="/rewards" className="item">
           <div className="col">
-            <ion-icon name="cash-outline" onClick={checkRoute}></ion-icon>
+            <ion-icon name="cash-outline"></ion-icon>
             <strong>Rewards</strong>
           </div>
         </Link>
         <Link to="/bills" className="item">
           <div className="col">
-            <ion-icon name="calendar-outline" onClick={checkRoute}></ion-icon>
+            <ion-icon name="calendar-outline"></ion-icon>
             <strong>Upcoming Bills</strong>
           </div>
         </Link>
-        <Link to="/settings" className="item" onClick={checkRoute}>
+        <Link to="/settings" className="item">
           <div className="col">
             <ion-icon name="settings-outline"></ion-icon>
             <strong>Settings</strong>
           </div>
         </Link>
       </div>
-      {/* <div
-        class="appBottomMenu"
-        // style="position: relative; z-index: 0; padding-bottom: 0;"
-      >
-        <a href="#" class="item active">
-          <div class="col">
-            <ion-icon name="pulse-outline"></ion-icon>
-            <strong>Item 1</strong>
-          </div>
-        </a>
-        <a href="#" class="item">
-          <div class="col">
-            <ion-icon name="card-outline"></ion-icon>
-            <strong>Item 2</strong>
-          </div>
-        </a>
-        <a href="#" class="item">
-          <div class="col">
-            <ion-icon name="cash-outline"></ion-icon>
-            <strong>Item 3</strong>
-          </div>
-        </a>
-        <a href="#" class="item">
-          <div class="col">
-            <ion-icon name="calendar-outline"></ion-icon>
-            <strong>Item 4</strong>
-          </div>
-        </a>
-        <a href="javascript:;" class="item">
-          <div class="col">
-            <ion-icon name="settings-outline"></ion-icon>
-            <strong>Item 5</strong>
-          </div>
-        </a>
-      </div> */}
     </nav>
   );
 };

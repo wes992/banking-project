@@ -6,13 +6,17 @@ import Rewards from './components/Rewards';
 import Settings from './components/Settings';
 import Spending from './components/Spending';
 import Bills from './components/Bills';
+import Login from './components/Login';
 
 
-const Routes = ({accounts}) => {
+const Routes = ({accounts}, handler) => {
  
   return (
     <Switch>
-      <Route exact path="/">
+      <Route exact path='/'>
+        <Login />
+      </Route>
+      <Route path="/accounts">
         <Accounts accounts={accounts}/>
       </Route>
       <Route path="/rewards">

@@ -8,7 +8,7 @@ const Settings = () => {
     
         <div className="appHeader">
             <div className="left">
-                <a href="/" className="headerButton goBack">
+                <a href="/accounts" className="headerButton goBack">
                     <ion-icon name="chevron-back-outline"></ion-icon>
                 </a>
             </div>
@@ -16,7 +16,7 @@ const Settings = () => {
                 Settings
             </div>
             <div className="right">
-                <a href="app-notifications.html" className="headerButton">
+                <a href="/accounts" className="headerButton">
                     <ion-icon className="icon" name="notifications-outline"></ion-icon>
                     <span className="badge">4</span>
                 </a>

@@ -3,6 +3,7 @@ import config from "../accountData/config";
 
 class Rewards extends Component {
 
+
   handleClick = async (accountId) => {
     if (accountId.isEnrolledInRewards) {
       try {
@@ -25,7 +26,7 @@ class Rewards extends Component {
         )
           // .then((res) => res.json())
           // .then((res) => console.log(res));
-          const json = await request.json(); //This is the line that is throwing 'cannot find property json of undefined' error
+          const json = await request.json();
           
           if ((1 > redeemAmount) || (redeemAmount > 10000) || (redeemAmount === null)) {
             return alert('Please try again, with numbers greater than 0')
@@ -35,28 +36,32 @@ class Rewards extends Component {
               `Successfully redeemed ${redeemAmount} points! Your updated rewards balance is ${json}`
               );
             }
-            if (json.status === 400) {
+            if (redeemAmount === isNaN) {
               return alert(`You don't have enough points to do that. Your available balance is ${account.rewardsPoints}, try again with a number less that that.`)
             }
 
 
-        this.setProps(previousState => ({
-          accounts: previousState.accounts.map(account =>
-            account.number === accountId.number ? { ...account, ...json } : account
-          ),
-        }));
+        
       } catch (error) {
         console.error(error);
       }
-      return;
+      return
     }
     if (accountId.isEligibleForRewards && !accountId.isEnrolledInRewards) {
       try {
-        await fetch(config.url + `/api/${accountId.number}/enroll`, {
+        const request = await fetch(config.url + `/api/${accountId.number}/enroll`, 
+        {
           method: "POST",
-        }).then((res) => alert("Server responded with status " + res.status));
+          
+        })
+        .then((res) => alert("Server responded with status:  " + res.status));
+        
+        // accountId.isEnrolledInRewards = true;
+        // accountId.rewardsPoints = 500;
+        // {() => handler()}
+        return
       } catch (error) {
-        console.log(error);
+        console.log('here is yo error, foo ' + error);
       }
     } else {
       alert("This account is not eligible for rewards at this time");
@@ -65,18 +70,17 @@ class Rewards extends Component {
 
   render() {
     const { accounts } = this.props;
-
     return (
       <div className="accountsContainer">
         <div className="appHeader">
           <div className="left">
-            <a href="/" className="headerButton goBack">
+            <a href="/accounts" className="headerButton goBack">
               <ion-icon name="chevron-back-outline"></ion-icon>
             </a>
           </div>
           <div className="pageTitle">Rewards</div>
           <div className="right">
-            <a href="/" className="headerButton">
+            <a href="/accounts" className="headerButton">
               <ion-icon
                 className="icon"
                 name="notifications-outline"
@@ -91,7 +95,7 @@ class Rewards extends Component {
         {accounts.map((account) => {
           if (account.isEligibleForRewards) {
             return (
-              <div key={account.number} className="card-block mb-2">
+              <div key={account.number} className="card-block mb-2 bg-">
                 <div className="card-main">
                   <div className="balance title">
                     <h5 className="title">{account.nickname}</h5>
@@ -102,7 +106,7 @@ class Rewards extends Component {
                       >
                         {account.isEnrolledInRewards
                           ? `${account.rewardsPoints} points`
-                          : "Start Earning"}
+                          : "Enroll Now"}
                       </h5>
                     </span>
                   </div>
