@@ -9,7 +9,7 @@ const Settings = () => {
         <div className="appHeader">
             <div className="left">
                 <a href="/accounts" className="headerButton goBack">
-                    <ion-icon name="chevron-back-outline"></ion-icon>
+                <h5>MyBank &trade;</h5>
                 </a>
             </div>
             <div className="pageTitle">
@@ -127,7 +127,7 @@ const Settings = () => {
                     </div>
                 </li>
                 <li>
-                    <a href="/settings" className="item">
+                    <a href="/" className="item">
                         <div className="in">
                             <div>Log out all devices</div>
                         </div>

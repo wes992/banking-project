@@ -7,44 +7,49 @@ const Login = () => {
 
         return ( 
             <div id="appCapsule">
-
-                <div class="section mt-2 text-center">
-                    <h1>Log in</h1>
+                <div className="heroContainer">
+                    <h1>Welcome to MyBank &trade;</h1>
+                    <h5>Your Ally in Digital Banking</h5>
                 </div>
-                <div class="section mb-5 p-2">
+                <div className="formTitle section mt-2 text-center">
+                    <h3>Please Log in</h3>
+                </div>
+                <div className="section mb-5 p-2">
 
                     <form action="/accounts">
-                        <div class="card">
-                            <div class="card-body pb-1">
-                                <div class="form-group basic">
-                                    <div class="input-wrapper">
-                                        <label class="label" for="email1">E-mail</label>
-                                        <input type="email" class="form-control" id="email1" placeholder="Your e-mail" />
-                                        <i class="clear-input"><ion-icon name="close-circle"></ion-icon></i>
+                        <div className="card">
+                            <div className="card-body pb-1">
+                                <div className="form-group basic">
+                                    <div className="input-wrapper">
+                                        <label className="label" htmlFor="email1">E-mail</label>
+                                        <input type="email" className="form-control" id="email1" placeholder="Your e-mail" />
+                                        <i className="clear-input"><ion-icon name="close-circle"></ion-icon></i>
                                     </div>
                                 </div>
                 
-                                <div class="form-group basic">
-                                    <div class="input-wrapper">
-                                        <label class="label" for="password1">Password</label>
-                                        <input type="password" class="form-control" id="password1" placeholder="Your password" />
-                                        <i class="clear-input"><ion-icon name="close-circle"></ion-icon></i>
+                                <div className="form-group basic">
+                                    <div className="input-wrapper">
+                                        <label className="label" htmlFor="password1">Password</label>
+                                        <input type="password" className="form-control" id="password1" placeholder="Your password" />
+                                        <i className="clear-input"><ion-icon name="close-circle"></ion-icon></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
 
-                        <div class="form-links mt-2">
+                        <div className="form-links mt-2">
                             <div>
                                 <a href="/">Register Now</a>
                             </div>
                             <div><a href="/">Forgot Password?</a></div>
                         </div>
 
-                        <div class="form-button-group  transparent">
+                        <p className='loginParagraph small'>For the purposes of this demo, login form and links do nothing. Click login to proceed</p>
+
+                        <div className="form-button-group  transparent">
                             <Link to='/accounts'>
-                                <button type="submit" id='loginBtn' class="btn btn-primary btn-block btn-lg">Log in</button>
+                                <button type="submit" id='loginBtn' className="btn btn-primary btn-block btn-lg">Log in</button>
                             </Link>
                         </div>
 

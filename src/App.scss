@@ -8,22 +8,118 @@
 
 .accountsContainer {
   text-align: center;
-  margin: 8% auto;
+  margin: 12% auto;
   color: $main-text;
+  height: 100vh;
 }
 
 
 .card {
-  background: #ffffff;
+  background: $main-background-fallback;
   border-radius: 10px;
   border: 0;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: $main-box-shadow;
   width: 80%;
   margin: auto;
 
   .card-body {
     padding: 16px;
   }
+}
+
+.extraHeader {
+  position: fixed;
+  left: 0;
+  top: 56px;
+  height: 50px;
+  right: 0;
+  width: 100%;
+  padding: 5px 16px;
+  display: flex;
+  align-items: center;
+  background: $transparent-white;
+  z-index: 1000;
+  border-bottom: 1px solid $transparent-white;
+}
+
+.nav-tabs.lined {
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  display: flex;
+
+  .nav-item {
+    flex: 1;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    .nav-link {
+      color: $listview-secondary-font-color;
+      font-weight: 500;
+      font-size: 13px;
+      border: 0 !important;
+      border-bottom: 2px solid transparent !important;
+      line-height: 1.2em;
+      width: 100%;
+      border-radius: 0;
+      padding: 6px 10px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 !important;
+      border-bottom-color: 2px solid;
+
+      &.active {
+        color: $main-app-color;
+        background: transparent;
+        border-bottom-color: $main-app-color !important;
+      }
+    }
+  }
+}
+
+.bill-box {
+  background: $transparent-white;
+  box-shadow: $main-box-shadow;
+  border-radius: 10px;
+  padding: 20px 24px;
+  text-align: center;
+
+  &.billList{
+    background-color: $bill-list-bg;
+  }
+
+  p {
+    font-size: 11px;
+    line-height: 1.4em;
+    height: 36px;
+    margin: 0 0 10px 0;
+  }
+
+  .price {
+    font-size: 20px;
+    font-weight: 700;
+    color: $main-ui-text;
+    letter-spacing: -0.02em;
+    line-height: 1em;
+    margin-bottom: 12px;
+  }
+
+  .img-wrapper {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  img {
+    margin: auto;
+  }
+  
 }
 
 .form-group {
@@ -36,17 +132,17 @@
     .form-control {
       background: transparent;
       border: none;
-      border-bottom: 1px solid #DCDCE9;
+      border-bottom: 1px solid $main-border-color;
       padding: 0 30px 0 0;
       border-radius: 0;
       height: 40px;
-      color: #27173E;
+      color: $main-ui-text;
       font-size: 15px;
     }
 
     .form-control:focus {
-      border-bottom-color: #6236FF;
-      box-shadow: inset 0 -1px 0 0 #6236FF;
+      border-bottom-color: $main-app-color;
+      box-shadow: inset 0 -1px 0 0 $main-app-color;
     }
   }
 
@@ -54,7 +150,7 @@
     font-size: 11px;
     margin: 0;
     font-weight: 500;
-    color: #27173E;
+    color: $main-ui-text;
     display: block;
     line-height: 1.2em;
     text-align: left;
@@ -66,14 +162,14 @@
 
   .input-info {
     font-size: 11px;
-    color: #A9ABAD;
+    color: $input-font-color;
   }
 
   .clear-input {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #958d9e;
+    color: $listview-secondary-font-color;
     height: 38px;
     font-size: 22px;
     position: absolute;
@@ -97,7 +193,7 @@
   }
 
   .input-wrapper.active .label {
-    color: #6236FF !important;
+    color: $main-app-color !important;
   }
 }
  
@@ -122,7 +218,7 @@
   right: 0;
   width: 100%;
   padding: 0 16px;
-  background: #FFF;
+  background: $main-background-fallback;
   min-height: 84px;
   padding-bottom: env(safe-area-inset-bottom);
   
@@ -131,6 +227,10 @@
     
     a {
       min-width: 80%;
+      
+      &:hover{
+        text-decoration: none;
+      }
     }
 
   }
@@ -139,10 +239,10 @@
 
 .card-block {
   height: 125px;
-  width: 40%;
-  background: #6236FF;
+  width: 60%;
+  background: $card-bg;   //$card-bg is a variable also
   border-radius: 10px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.09);
+  box-shadow: 0 1px 3px 0 $main-box-shadow;
   color: #FFF;
   position: relative;
   margin: auto;
@@ -167,10 +267,11 @@
 
       .title {
         font-weight: 700;
-        color: #FFF;
+        color: $card-main-text;
         // margin-top: 7px;
         font-size: 18px;
       }
+
     }
   
     span.label { 
@@ -186,6 +287,10 @@
       &.balanceLabel{
         margin-top: 20px;
       }
+    }
+
+    h5.balanceLabel {
+      font-size: 1.2em
     }
 
     .in {
@@ -215,10 +320,11 @@
         margin-right: 20px;
 
         a {
-          color:white;
+          color:$rewards-text-link;
 
           &:hover {
             text-decoration: none;
+            color: $rewards-text-link-hover;
           }
         }
       }
@@ -237,9 +343,46 @@
   }
 }
 
+@media (max-width: 440px) {
+  div.card-number {
+    display: none
+  }
+}
+
+@media (max-width: 600px) {
+  div.card-block {
+    width: 80%;
+  }
+}
+
 #appCapsule {
   padding: 56px 0;
-  // margin-bottom: env(safe-area-inset-bottom);
+  min-height:100vh;
+
+  .heroContainer {
+    width: 50%;
+    position: relative;
+    left: 50%;
+    top: 10%;
+    text-align: center;
+    transform: translate(-50%, -10%);
+    margin-bottom: 50px;
+    color: $transparent-white;
+  }
+}
+
+.loginParagraph {
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, 50%);
+  color: $transparent-white;
+  margin: 0 auto;
+}
+
+.formTitle {
+  color: $transparent-white;
 }
 
 .appHeader {
@@ -254,7 +397,7 @@
   right: 0;
   z-index: 999;
   background: $transparent-white;
-  color: #27173E;
+  color: $main-ui-text;
   border-bottom: 1px solid $transparent-white;
 
   .badge {
@@ -269,11 +412,11 @@
     padding: 0 4px !important;
     position: absolute;
     right: 0;
-    top: 10px;
-
+    top: 10px; 
   }
 
   .pageTitle {
+    color: $main-app-color;
     font-size: 17px;
     font-weight: 500;
     padding: 0 10px;
@@ -303,7 +446,7 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-    color: #6236FF;
+    color: $main-app-color;
     position: relative;
   }
 
@@ -330,6 +473,32 @@
   }
 }
 
+.btn-primary {
+  background: $card-bg;
+  border: none;
+
+  &#loginBtn {
+    margin-bottom: 10%;
+
+  &:hover{
+    background: $card-bg;
+  }
+
+  &:focus{
+    outline: 0;
+  }
+}
+}
+
+.loginParagraph {
+  color: $transparent-white;
+  margin: 0 auto;
+}
+
+.extra-header-active {
+  margin-top: 75px;
+}
+
 .avatar-section {
   text-align: center;
   position: relative;
@@ -337,11 +506,11 @@
 
   .imaged {
     border: 5px solid #FFF;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.09);
+    box-shadow: 0 1px 3px 0 $main-box-shadow;
   }
 
   .button {
-    background: #6236FF;
+    background: $main-app-color;
     color: #FFF;
     width: 32px;
     height: 32px;
@@ -357,7 +526,7 @@
 }
 
 .listview-title {
-  color: #958d9e;
+  color: $listview-secondary-font-color;
   padding: 7px 16px;
   font-size: 13px;
   font-weight: 500;
@@ -369,25 +538,25 @@
   display: block;
   padding: 0;
   margin: 0;
-  color: #27173E;
-  background: $transparent-white;
-  border-top: 1px solid #DCDCE9;
-  border-bottom: 1px solid #DCDCE9;
+  color: $main-ui-text;
+  background: $bill-list-bg;
+  border-top: 1px solid $main-border-color;
+  border-bottom: 1px solid $main-border-color;
   line-height: 1.3em;
 
-  .listview .text-muted {
+  .text-muted {
     font-size: 13px;
-    color: #A9ABAD !important;
+    color: $muted-white !important;
   }
 
-  .listview .text-small {
+  .text-small {
     font-size: 13px;
-    color: #958d9e;
+    color: $listview-secondary-font-color;
   }
 
-  .listview .text-xsmall {
+  .text-xsmall {
     font-size: 11px;
-    color: #A9ABAD;
+    color: $input-font-color;
   }
 
   &.flush {
@@ -419,10 +588,16 @@
   overflow: hidden;
   border: 0;
   border-radius: 10px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.09);
+  box-shadow: 0 1px 3px 0 $main-box-shadow;
 } 
 
 }
+
+.text-primary,
+a.text-primary {
+  color: $main-app-color !important;
+}
+
 
 .listview > li {
   padding: 11px 16px;
@@ -441,7 +616,7 @@
   right: 0;
   bottom: 0;
   height: 1px;
-  background: #DCDCE9;
+  background: $main-border-color;
 }
 
 .listview > li:last-child:after {
@@ -456,7 +631,7 @@
 }
 
 .listview > li footer {
-  color: #958d9e;
+  color: $listview-secondary-font-color;
   margin-top: 3px;
 }
 
@@ -467,12 +642,12 @@
 .listview > li.divider-title {
   background: rgba(220, 220, 233, 0.5);
   margin-top: -1px;
-  border-top: 1px solid #DCDCE9;
-  border-bottom: 1px solid #DCDCE9;
+  border-top: 1px solid $main-border-color;
+  border-bottom: 1px solid $main-border-color;
   padding: 12px 16px;
   font-size: 13px;
   min-height: auto;
-  color: #958d9e;
+  color: $listview-secondary-font-color;
 }
 
 .listview > li.divider-title:after {
@@ -491,7 +666,7 @@
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  color: #27173E !important;
+  color: $main-ui-text !important;
 }
 
 .link-listview > li a:after {
@@ -504,7 +679,7 @@
   top: 50%;
   margin-top: -9px;
   line-height: 1em;
-  color: #A9ABAD;
+  color: $input-font-color;
   opacity: 0.6;
 }
 
@@ -556,7 +731,7 @@
 
 .image-listview > li .item .icon-box.transparent {
   font-size: 28px;
-  color: #6236FF;
+  color: $main-app-color;
 }
 
 .image-listview > li .item .in {
@@ -567,7 +742,7 @@
 }
 
 .image-listview > li a.item {
-  color: #27173E !important;
+  color: $main-ui-text !important;
   padding-right: 36px;
 }
 
@@ -585,7 +760,7 @@
 }
 
 .image-listview.media > li {
-  border-bottom: 1px solid #DCDCE9;
+  border-bottom: 1px solid $main-border-color;
 }
 
 .image-listview.media > li:last-child {
@@ -625,19 +800,18 @@ span h5:hover {
 .custom-control .custom-control-label {
   padding-left: 10px;
   padding-top: 2px;
-  color: #27173E;
+  color: $main-ui-text;
 }
 
 .custom-control .custom-control-label:before {
   box-shadow: none !important;
-  background: #DCDCE9;
+  background: $main-border-color;
   width: 22px;
   height: 22px;
-  border-color: #DCDCE9;
   border-radius: 100%;
   margin-top: -2px;
   background: transparent;
-  border-color: #DCDCE9 !important;
+  border-color: $main-border-color !important;
 }
 
 .custom-control .custom-control-label:after {
@@ -646,13 +820,13 @@ span h5:hover {
 }
 
 .custom-control .custom-control-label:active:before {
-  background: #fff !important;
-  border-color: #DCDCE9 !important;
+  background: $main-background-fallback !important;
+  border-color: $main-border-color !important;
 }
 
 .custom-control .custom-control-input:checked ~ .custom-control-label:before {
-  background: #6236FF !important;
-  border-color: #6236FF !important;
+  background: $main-app-color !important;
+  border-color: $main-app-color !important;
 }
 
 .custom-control .custom-control-input:checked ~ .custom-control-label:after {
@@ -683,7 +857,7 @@ span h5:hover {
   width: 56px;
   height: 30px;
   border-color: #ccccdf !important;
-  background: #DCDCE9;
+  background: $main-border-color;
 }
 
 .custom-switch .custom-control-label:after {
@@ -694,7 +868,7 @@ span h5:hover {
   margin-left: 1px;
   left: 3px;
   top: 4px;
-  background: #fff;
+  background: $main-background-fallback;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 2px 1px 0 rgba(0, 0, 0, 0.05);
 }
 
@@ -837,7 +1011,7 @@ span h5:hover {
   margin: 1px auto 3px auto;
   font-size: 24px;
   line-height: 1em;
-  color: #27173E;
+  color: $main-ui-text;
   transition: 0.1s all;
   display: block;
   margin-top: 1px;
@@ -853,7 +1027,7 @@ span h5:hover {
   align-items: center;
   justify-content: center;
   border-radius: 200px;
-  background: #6236FF;
+  background: $main-app-color;
 }
 
 .appBottomMenu .item .action-button.large {
@@ -874,7 +1048,7 @@ span h5:hover {
 .appBottomMenu .item strong {
   margin-top: 4px;
   display: block;
-  color: #27173E;
+  color: $main-ui-text;
   font-weight: 400;
   transition: 0.1s all;
 }
@@ -884,20 +1058,20 @@ span h5:hover {
 }
 
 .appBottomMenu .item.active:before {
-  background: #6236FF;
+  background: $main-app-color;
 }
 
 .appBottomMenu .item.active .icon,
 .appBottomMenu .item.active ion-icon,
 .appBottomMenu .item.active strong {
-  color: #6236FF !important;
+  color: $main-app-color !important;
   font-weight: 500;
 }
 
 .appBottomMenu .item:hover .icon,
 .appBottomMenu .item:hover ion-icon,
 .appBottomMenu .item:hover strong {
-  color: #27173E;
+  color: $main-ui-text;
 }
 
 .appBottomMenu.text-light {
@@ -931,4 +1105,135 @@ span h5:hover {
 
 .appBottomMenu.bg-primary .item:before, .appBottomMenu.bg-secondary .item:before, .appBottomMenu.bg-success .item:before, .appBottomMenu.bg-warning .item:before, .appBottomMenu.bg-danger .item:before, .appBottomMenu.bg-info .item:before, .appBottomMenu.bg-light .item:before, .appBottomMenu.bg-dark .item:before {
   display: none;
+}
+
+
+.pyro {
+  position: absolute;
+  height: 250px;
+  width: 50%;
+  top: 10%;
+  left: 10%;
+  z-index: -10;
+}
+
+// Create the explosion...
+$box-shadow: ();
+$box-shadow2: ();
+@for $i from 0 through $particles {
+  $box-shadow: $box-shadow,
+               random($width)-$width / 2 + px
+               random($height)-$height / 1.2 + px
+               hsl(random(360), 100, 50);
+  $box-shadow2: $box-shadow2, 0 0 #fff
+}
+@mixin keyframes ($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-ms-keyframes #{$animationName} {
+        @content;
+    }
+
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin animation-delay ($settings) {
+    -moz-animation-delay: $settings;
+    -webkit-animation-delay: $settings;
+    -o-animation-delay: $settings;
+    -ms-animation-delay: $settings;
+    animation-delay: $settings;
+}
+
+@mixin animation-duration ($settings) {
+    -moz-animation-duration: $settings;
+    -webkit-animation-duration: $settings;
+    -o-animation-duration: $settings;
+    -ms-animation-duration: $settings;
+    animation-duration: $settings;
+}
+
+@mixin animation ($settings) {
+    -moz-animation: $settings;
+    -webkit-animation: $settings;
+    -o-animation: $settings;
+    -ms-animation: $settings;
+    animation: $settings;
+}
+
+@mixin transform ($settings) {
+    transform: $settings;
+    -moz-transform: $settings;
+    -webkit-transform: $settings;
+    -o-transform: $settings;
+    -ms-transform: $settings;
+}
+
+// body {
+//   margin:0;
+//   padding:0;
+//   background: #000;
+//   overflow: hidden;
+// }
+
+.pyro > .before, .pyro > .after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: $box-shadow2;
+  @include animation((1s bang ease-out 5 backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards));
+}
+    
+.pyro > .after {
+  @include animation-delay((1.25s, 1.25s, 1.25s));
+  @include animation-duration((1.25s, 1.25s, 6.25s));
+}
+        
+@include keyframes(bang) {
+  to {
+    box-shadow:$box-shadow;
+  }
+}
+    
+@include keyframes(gravity)  {
+  to {
+    @include transform(translateY(200px));
+    opacity: 0;
+  }
+}
+    
+@include keyframes(position) {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+  40%, 59.9% {  
+    margin-top: 20%;
+    margin-left: 70%
+  }
+  60%, 79.9% {  
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+  80%, 99.9% {  
+    margin-top: 30%;
+    margin-left: 80%;
+  }
 }

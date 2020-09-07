@@ -1,4 +1,20 @@
 $main-font: 'Poppins', sans-serif;
-$transparent-white: rgba(255,255,255, .8);
-$card-bg: #17a2b8;
-$main-text: rgb(235, 235, 235)
+$transparent-white: rgba(255,255,255, 1);
+$muted-white: rgba(255,255,255,0.75);
+$card-bg: #4abdac;
+$main-text: rgb(235, 235, 235);
+$main-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+$main-app-color: #fc4a1a;
+$card-main-text: #fff;
+$rewards-text-link: rgba(255,255,255,.85);
+$rewards-text-link-hover: rgba(255,255,255, 1);
+$main-ui-text: #27173E;
+$main-background-fallback: #fff;
+$main-border-color: #DCDCE9;
+$input-font-color: #A9ABAD;
+$listview-secondary-font-color: #958d9e;
+$bill-list-bg: rgba(255,255,255, 0.3);
+
+$particles: 50;
+$width: 500;
+$height: 500;

@@ -7,8 +7,8 @@ const Spending = () => {
 
         <div className="appHeader">
           <div className="left">
-            <a href="/" className="headerButton goBack">
-              <ion-icon name="chevron-back-outline"></ion-icon>
+            <a href="/accounts" className="headerButton goBack">
+            <h5>MyBank &trade;</h5>
             </a>
           </div>
           <div className="pageTitle">Spending</div>
