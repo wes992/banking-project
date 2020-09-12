@@ -8,7 +8,7 @@ const Login = () => {
         return ( 
             <div id="appCapsule">
                 <div className="heroContainer">
-                    <h1>Welcome to <strong>MyBank &trade;</strong></h1>
+                    <h2>Welcome to <strong>MyBank&trade;</strong></h2>
                     <h5>Your Ally in Digital Banking</h5>
                 </div>
                 <div className="formTitle section mt-2 text-center">
